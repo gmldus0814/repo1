@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid pink;
+        }
+
+        .parent {
+            width: 100px;
+            margin: 50px;
+            background-color: rgb(249, 255, 205);
+        }
+
+        .child {
+            background: rgb(173, 230, 221, 0.5);
+        }
+
+        .relative {
+            position: relative;
+            /* position과 top을 같이 써야함 */
+            top: 10px;
+            left: -20px;
+        }
+
+        /* ┌ 이 위치를 0,0이라고 해서 계산 
+            실제로는 초상 요소 중 position이 stactic아닌 것 기주느운
+        */
+        
+        .absolute {
+            position: absolute;
+            top: 300px;
+            left: 90px;
+        }
+
+        .fixed {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 20px;
+            background-color: lightpink;
+        }
+        
+        .z1 {
+            top: 20px;
+            left: 20px;
+            background-color: pink;
+        }
+
+        .z2 {
+            top: -10;
+            left: -20px;
+            background-color: lightcoral;
+        }
+
+        .z3 {
+            top: -10;
+            left: -20px;
+            background-color: lightskyblue;
+        }
+
+        .hidden {
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .scroll {
+            height: 100px;
+            overflow: scroll;
+        }
+
+        .auto {
+            height: 100px;
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body id="top">
+        
+    <div class="sticky">
+        스티커: 메뉴1 메뉴2
+    </div>
+    
+    <div class="parent">
+        부모
+        <div class="child">
+            자식
+            <br>
+            다음줄
+        </div>
+        <div>
+            글씨 몇개
+        </div>
+    </div>
+    <div class="parent">
+        부모
+        <div class="child  relative">
+            자식
+            <br>
+            다음줄
+        </div>
+        <div>
+            글씨 몇개
+        </div>
+    </div>
+
+    <div class="parent relative">
+        부모
+        <div class="child absolute">
+            자식
+            <br>
+            다음줄
+        </div>
+        <div>
+            글씨 몇개
+        </div>
+    </div>
+
+    <div class="fixed">
+        <a href="#top">맨 위로</a>
+    </div>
+
+    <div class="parent">
+        <div class="relative z1">
+            1
+        </div>
+        <div class="relative z2">
+            2
+        </div>
+        <div class="relative z3">
+            3
+        </div>
+    </div>
+    <div class="parent hidden">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque doloribus quae odit quo, officia vel facilis repellat nemo, expedita quas est ducimus ratione commodi quaerat quasi nesciunt consequatur consectetur et!
+    </div>
+    <div class="parent scroll">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque doloribus quae odit quo, officia vel facilis repellat nemo, expedita quas est ducimus ratione commodi quaerat quasi nesciunt consequatur consectetur et!
+    </div>
+    <div class="parent auto">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque doloribus quae odit quo, officia vel facilis repellat nemo, expedita quas est ducimus ratione commodi quaerat quasi nesciunt consequatur consectetur et!
+    </div>
+</body>
+</html>

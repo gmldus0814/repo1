@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 좌우 전체 너비를 가진다
+        그래서 새로운 줄에 표시된다
+        너비가 전체 크기보다 작은경우 나머지 공간에 정렬할 수 있다*/
+        .block {
+            width: 200px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+
+        /* 
+            자기 컨텐츠만큼의 너비를 가진다 
+            width,height,margin-top,margin-bottom 지정 불가능
+            좌우 margin, padding은 적용 가능
+            padding 좌우는 적용 되지만 위아래는 적용 안됨, 단 border는 멀어짐
+        */
+        .inline {
+            border: 1px solid red;
+            margin: 30px;
+            /* padding: 30px; */
+        }
+
+        div.parent #c2 {
+            height: 500px;
+        }
+
+
+        /* 
+            --block 요소--
+            div
+            h1 ~ h6
+            p
+            ol
+            ul
+            li
+            hr
+            table
+            form
+        */
+        /* 
+            --inline 요소--
+            span
+            a
+            strong
+            img
+            br
+            input
+            select
+            textarea
+            button
+        */
+
+        .bg_blue{
+            background-color: blue;
+            color: white;
+        }
+
+        .parent > div{
+            border:1px dotted red;
+            width: 400px;
+            height: 200px;
+
+            /* inline에 block의 장점인 부피감을 더한 것 */
+            display: inline-block;
+
+            /* inline, inline-block일때만 적용 */
+            vertical-align: top;
+        }
+
+        .parent {
+            border: 1px dotted palevioletred;
+            width: 500px;
+        }
+
+        /* 
+            display none은 공간까지 사라짐
+            visibility hidden은 공간이 남아있음
+        */
+        #c1 {
+            /* display: none;
+            visibility: hidden; */
+            background-color: antiquewhite;
+            opacity: 1;
+        }
+        #c1:hover {
+            opacity: 0.5;
+        }
+
+        .fake_div {
+            border: 1px dotted darkorchid;
+            display: inline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="block">
+        첫번째 p
+    </p>
+    <p class="block">
+        두번째 p
+    </p>
+    <a href="#a" class="inline">
+        첫번째 a
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi voluptatem rerum eveniet! Optio tempore amet
+        perspiciatis, eaque doloribus possimus. Aspernatur aliquid eum quaerat sunt ex quis, consequuntur dolores
+        molestiae delectus.
+    </a>
+    <a href="#a" class="inline">
+        두번째 a
+    </a>
+    <br>
+    <span class="bg_blue">첫번째 span</span>
+    <span class="bg_blue">두번째 span</span>
+    <br>
+    <span class="bg_blue">첫번째 span</span><span class="bg_blue">두번째 span</span>
+    
+    <hr>
+    
+    <div class="parent">
+        <div id="c1">목록1</div>
+        <div id="c2">
+            목록2
+            <br>
+            sad
+        </div>
+    </div>
+
+    <div class="fake_div">
+        div이었던것
+    </div>
+</body>
+
+</html>

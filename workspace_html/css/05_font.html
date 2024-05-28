@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text {
+            border: 1px solid red;
+            width: 200px;
+        }
+
+        /* 원래 한단어로 인식하는 경우 넘쳐도 자동 줄바꿈이
+        되지 않는다. break-word를 사용하면 적용된 너비를 벗어나지 않게
+        자동 줄바꿈 해줌 */
+        .wordwrap {
+            word-wrap: break-word;
+        }
+
+
+        /* 
+            word-wrap: break-word랑 비슷한데
+            
+        */
+        .wordbreak {
+            word-wrap: break-all;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="text wordwrap" >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deserunt delectus nam dolores ex ratione libero. Aspernatur eveniet, laborum mollitia consequuntur ab saepe consequatur recusandae, nihil optio rerum, voluptatum ducimus.
+        sadasdsadasdsadsadasdddddasdasdsasdsa sadasdasdassasdsadsadadasddsadasdsa
+    </div>
+    <div class="text wordbreak" >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga deserunt delectus nam dolores ex ratione libero. Aspernatur eveniet, laborum mollitia consequuntur ab saepe consequatur recusandae, nihil optio rerum, voluptatum ducimus.
+        sadasdsadasdsadsadasdddddasdasdsasdsa sadasdasdassasdsadsadadasddsadasdsa
+    </div>
+</body>
+</html>

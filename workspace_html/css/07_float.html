@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .fl1, .fl2{
+            border: 1px solid blue;
+            float: left;
+        }
+
+        .fr1, .fr2 {
+            float: right;
+        }
+
+        .d1{
+            border: 1px solid red;
+            float: left;
+        }
+
+        .d2 {
+            border: 1px solid blue;
+        }
+
+        /* 
+            부모에게 after을 이용해서 float한 자식들의 정보를
+            원래 층으로 전달
+        */
+        .clearfix:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+
+        .cate {
+            float: left;
+        }
+        .cart {
+            float: right;
+        }
+        .coupang {
+            text-align: center;
+        }
+        .logo{
+            width: 200px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, eaque ex debitis et sunt pariatur facere aliquid officia ipsam animi, at porro delectus cupiditate fugiat reiciendis quidem blanditiis harum quibusdam! -->
+        <div class="box fl1">1</div>
+        <div class="box fl2">2</div>
+        <div class="box fr1">3</div>
+        <div class="box fr2">4</div>
+    </div>
+
+    <div class="clearfix">
+        <div class="d1">d1 float left;</div>
+    </div>
+    <div class="d2">d2</div>
+    <div style="background-color: aqua; height: 50px;">
+    </div>
+
+    <div class="clearfix coupang">
+        <div class="cate">카테고리</div>
+        <div class="logo">쿠팡로고</div>
+        <div class="cart">장바구니</div>
+    </div>
+</body>
+</html>

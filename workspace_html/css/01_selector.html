@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+        p {
+            border: 1px solid red;
+            color: lightcoral;
+        }
+        #p1 {
+            background-color:lightpink;
+            height: 500px;
+        }
+        .content {
+            color: black;
+        }
+        .font10 {
+            font-size: 15px;
+        }
+
+        /* [] 속성 */
+        [href] {
+            color: black;
+        }
+        
+        /* 속성 값을 이용 */
+        [href="#p2"] {
+            background-color: aquamarine; 
+        }
+
+        [title=ez] {
+            background-color: lightgrey;
+        }
+        
+        [id^=td_] {
+            border: 1px solid red;
+        }
+
+        [id$=_td] {
+            border: 1px solid blue;
+        }
+
+        [id*=td] {
+            font-size: 20px;
+        }
+
+        #mouse {
+            border: 1px solid purple;
+        }
+
+        #mouse:hover {
+            background-color: purple;
+        }
+
+        input[type=radio]:checked + span {
+            color: purple;
+            font-weight: bold;
+        }
+
+        #odd {
+            background-color: aquamarine;
+        }
+
+        #odd tr:not(.head) {
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS</h1>
+    <p id="p1" class="content font15">
+        집에 가고 싶다
+        <br>
+        취업 하고 싶다
+        <br>
+        당장 눕고 싶다
+        <br>
+        공부 잘하고 싶다
+    </p>
+    <div>
+        <p id="p2" class="font15">div안에 있는 p</p>
+    </div>
+    <a href="#p1">p1으로 스크롤</a>
+    <br>
+    <a title="ez" class="content">그냥 a태그</a>
+    <br>
+    <a href="#p2">p1으로 스크롤</a>
+
+    <table>
+        <tr>
+            <td id="td_1">첫번째</td>
+        </tr>
+        <tr>
+            <td id="td_2">두번째</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td id="1_td">첫번째</td>
+        </tr>
+        <tr>
+            <td id="2_td">두번째</td>
+        </tr>
+    </table>
+    <div id="mouse">
+        hover
+    </div>
+
+    <!-- span은 그냥 묶기위한 용도의 태그 -->
+    <input type="radio" name="토핑"> <span>올리브</span>
+    <input type="radio" name="토핑" checked> <span>치즈</span>
+    <input type="radio" name="토핑"> <span>페페로니</span>
+    <input type="radio" name="토핑"> <span>감자</span>
+
+    <table id="odd" border="1">
+        <tr class="head">
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+        <tr>
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+        <tr>
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+        <tr>
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+        <tr>
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+        <tr>
+            <td>글제목</td>
+            <td>작성자</td>
+        </tr>
+    </table>
+
+</body>
+</html>
