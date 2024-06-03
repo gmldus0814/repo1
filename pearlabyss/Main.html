@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            width: 100%;
+            height: 2000px;
+            overflow: auto;
+        }
+
+        div {
+            width: 100%;
+            height: 35px;
+            background-color: black;
+            position: absolute;
+            display: flex;
+            z-index: 1;
+        }
+
+        main {
+            background-image: url("https://s1.playblackdesert.com/dokev/contents/img/page1_main_bg.jpg");
+            max-width: 100vw;
+            height: 960px;
+            background-position: 0 -45px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        main>img {
+            width: 510px;
+            height: 210px;
+            display: block;
+            margin: 185px auto 0;
+            max-width: 80%;
+        }
+
+        .divBtn {
+            display: flex;
+            justify-content: center;
+            top: 820px;
+            background: 0;
+        }
+
+        div>.button {
+            width: 221px;
+            height: 64px;
+            border: none;
+            margin: 6px;
+            letter-spacing: -1px; /* 자간*/
+            font-size: 21px;
+            font-weight: bold;
+            color: white;                 
+            text-align: center;        
+            text-decoration: none;    
+            display: inline-block;                       
+            cursor: pointer;          
+            border: none;  
+        }
+
+        button:hover {
+            transform: translateY(-5px); /* 버튼을 위로 5px 이동 */
+            filter: brightness(1.1);     /* 밝기를 1.2배 증가 */
+        }
+
+        div>.btn1 {
+            background-color: #3596E7;
+            border-radius: 0 15px 0 15px ;        /* 둥근 모서리 */
+            transition: transform 0.2s, filter 0.2s; /* 변환 및 필터에 대한 부드러운 전환 */
+        }
+
+        div>.btn2 {
+            background-color: #FF2E63; 
+            
+            border-radius: 15px 0 15px ;        
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        section {
+            background-image: url("https://s1.playblackdesert.com/dokev/contents/img/bg_vertical.jpg");
+            width: 100%;
+            height: inherit;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <header>
+    </header>
+    <stiky></stiky>
+    <main>
+        <img src="https://s1.playblackdesert.com/dokev/contents/img/logo_ko.png">
+    </main>
+    <div class="divBtn">
+        <button class="button btn1">트레일러 보기</button>
+        <button class="button btn2">뉴스레터 구독</button>
+    </div>
+    <section>
+        
+    </section>
+</body>
+
+</html>
