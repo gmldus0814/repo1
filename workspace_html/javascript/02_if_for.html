@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 1. 15와 20이 주어졌을때
+        // 세번째 값 17이 그 사이에 있는지 확인
+        let x1 = 15;
+        let x2 = 20;
+        let x3 = 17;
+        // let x3 = prompt("값 입력");
+
+        if (x3 >= x1 && x3 <= x2) {
+            console.log(`${x3}는 ${x1}과 ${x2}사이에 있습니다`)
+        } else {
+            console.log(`${x3}는 ${x1}과 ${x2}사이에 없습니다`)
+        }
+
+
+
+        // 온도를 입력 받아요.
+        // 입력받은 온도에 따라서
+        // 1. '영하입니다', '영상입니다'
+        // 2. -3을 입력한 경우 '영하 3도입니다'
+        // 3. 아까 입력받은걸 어제 기온 (-3) 다시 온도를 입력받아 '어제보다 5도 높습니다'
+
+        let input = prompt("온도를 입력하세요");
+
+        if (input >= 0) {
+            console.log("영상입니다.")
+        } else if (input < 0) {
+            console.log("영하입니다.")
+        }
+
+        let todayInput = prompt("온도를 한번 더 입력해주세요.")
+        if (input < todayInput) {
+            console.log("어제보다", todayInput - input + "도 높습니다.")
+        } else if (input > todayInput) {
+            console.log("어제보다", input - todayInput + "도 낮습니다.")
+        }
+
+
+        // 두 수를 입력받고 
+        // a와 b에 저장해 둔 뒤 둘중에 큰 값 출력
+
+        let a = prompt("숫자 입력 a");
+        let b = prompt("숫자 입력 b");
+
+        
+        
+
+        if (Number(a) > Number(b)) {
+            console.log(a)
+        } else if (Number(a) < Number(b)) {
+            console.log(b)
+        }
+
+        // 4. 입력받은 숫자(또는 하드코딩한 값)가
+        // 10의 자리와 1의 자리가 같은지 판단
+        // 22 : 같음
+        // 23 : 다름
+
+
+        let c = prompt("숫자를 입력해주세요.");
+        let c1 = Math.floor(c / 10);
+        let c2 = c % 10;
+        if (c1 == c2) {
+            console.log("10의 자리 숫자와 1의 자리 숫자가 같습니다.")
+        } else {
+            console.log("다릅니다.")
+        }
+
+
+        // 5. 사각형에 점이 포함되는지
+        // 좌상단 모서리 좌표
+        let x41 = 10;
+        let y41 = 20;
+        // 우하단 모서리 좌표
+        let x42 = 90;
+        let y42 = 100;
+
+        let x43 = 0,
+            y43 = 0;
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

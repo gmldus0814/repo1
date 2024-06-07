@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수르 쓰는 이유?
+        // 1. 정해진 순으로 동작하는 코드의 묶음
+        // 2. 코드의 재사용을 편하게
+        // let z = 1;
+        // function add(x, y) {
+        //     let z = x+y;
+        //     console.log(z);
+        // }
+
+        // let a = 3;
+        // let b = 7;
+        // let arr3 = add(a,b);
+
+
+        // function minus(x, y) {
+        //     console.log('minus 실행')
+        //     return x - y;
+        // }
+        
+        // function study(cb) {
+        //     console.log('1~2시간 정도 공부함')
+        //     let remain = cb(10, 2);
+        //     console.log('남은 공부 시간: ', remain);
+        // }
+
+
+        // setTimeout(function () {
+        //     console.log('Fn1 실행');
+        // }, 5*1000);
+        
+
+        // 전달인자가 하나만 있는 경우
+        // 파라미터의 주변 괄호를 생략할 수 있다.
+        let test = a => {
+            console.log(a,b);
+            return a+b;
+        }
+        let test_1 = () => {
+
+        }
+
+        let test_2 = (a,b) => {
+            return a+b;
+        }
+
+        // 함수의 실행 블럭 내용이 return문만 있는 경우
+        // 'return' 키워드와 {} 생략할 수 있음.
+        // {}가 없는 경우 return 생략은 필수
+
+        let test3 = (a,b) => a+b;
+        let test4 = a => a*3;
+
+        arr = ['a0', 'a1', 'a2',' a3' ,'a4'];
+
+        arr.forEach(function(a,b,c,d) {
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+        });
+
+
+        result = arr.map(function(a,b,c,d) {
+            
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+
+            return a+"!";
+        });
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
