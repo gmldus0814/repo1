@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image1,
+        .image2,
+        .image3 {
+            height: 300px;
+            /* 가로 크기는 자동 조정 */
+            width: 300px;
+            object-fit: cover;
+            /* 이미지를 잘라내어 비율을 유지하면서 크기에 맞춤 */
+            cursor: pointer;
+            /* 클릭 가능하도록 커서 변경 */
+        }
+
+        #total_image img {
+            height: 500px;
+            /* 모든 이미지의 높이를 300px로 고정 */
+            width: auto;
+            /* 가로 크기는 자동 조정 */
+            object-fit: cover;
+            /* 이미지를 잘라내어 비율을 유지하면서 크기에 맞춤 */
+            cursor: pointer;
+            /* 클릭 가능하도록 커서 변경 */
+        }
+
+        #back {
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            let image1 = "https://blog.kakaocdn.net/dn/4tjzO/btsDrHnLaGc/lsuH38mt8HpFEtaSx1WrC1/img.jpg";
+            let image2 = "https://mblogthumb-phinf.pstatic.net/MjAyMzA0MjVfMTIy/MDAxNjgyNDIzOTcxMjg5.1iBEOtPxjRDurBWL5q5BUB8rEIsPPzEvSfPZ7FuvaiAg.PLb3MPIvi_0GxlPLd8sa5ZQCe1U-SqLWkRncv5KDol8g.JPEG.hs_sh73/1682423970402.jpg?type=w800";
+            let image3 = "https://blog.kakaocdn.net/dn/SCPDD/btqJDlsFYGU/Hu4vQSdTt27xo66VotCYc1/img.png";
+
+
+            let totalImage = document.querySelector("#total_image img");
+
+            let img1 = document.querySelector(".image1");
+            let img2 = document.querySelector(".image2");
+            let img3 = document.querySelector(".image3");
+
+            img1.addEventListener('click', function () {
+                totalImage.src = image1;
+            })
+            img2.addEventListener('click', function () {
+                totalImage.src = image2;
+            })
+            img3.addEventListener('click', function () {
+                totalImage.src = image3;
+            })
+
+            let back = document.querySelector("#back");
+            let red = document.querySelector("#red");
+            red.addEventListener('click', function () {
+                back.style.backgroundColor = 'red';
+            })
+            let green = document.querySelector("#green");
+            green.addEventListener('click', function () {
+                back.style.backgroundColor = 'green';
+            })
+            let blue = document.querySelector("#blue");
+            blue.addEventListener("click", function () {
+                back.style.backgroundColor = 'blue';
+            })
+            let pink = document.querySelector("#pink");
+            pink.addEventListener('click', function () {
+                back.style.backgroundColor = 'pink';
+            })
+
+            let time = document.querySelector("#time");
+            time.textContent = 'textContent';
+            time.innerText = 'innerText';
+            time.innerHTML = 'innerHTML';
+            time.innerText = '시 : 분 : 초';
+
+            let now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+
+            let = hms = h + "시 " + m + "분 " + s + "초";
+            time.innerText = hms;
+
+            setInterval(function () {
+                let now = new Date();
+                let h = now.getHours();
+                let m = now.getMinutes();
+                let s = now.getSeconds();
+
+                let = hms = h + "시 " + m + "분 " + s + "초";
+                time.innerText = hms;
+            }, 1000 / 4)
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="total_image">
+        <img src="https://blog.kakaocdn.net/dn/4tjzO/btsDrHnLaGc/lsuH38mt8HpFEtaSx1WrC1/img.jpg"
+            style="width:  500px;" />
+    </div>
+    <div>
+        <img src="https://blog.kakaocdn.net/dn/4tjzO/btsDrHnLaGc/lsuH38mt8HpFEtaSx1WrC1/img.jpg" class="image1" />
+        <img src="https://mblogthumb-phinf.pstatic.net/MjAyMzA0MjVfMTIy/MDAxNjgyNDIzOTcxMjg5.1iBEOtPxjRDurBWL5q5BUB8rEIsPPzEvSfPZ7FuvaiAg.PLb3MPIvi_0GxlPLd8sa5ZQCe1U-SqLWkRncv5KDol8g.JPEG.hs_sh73/1682423970402.jpg?type=w800"
+            class="image2" />
+        <img src="https://blog.kakaocdn.net/dn/SCPDD/btqJDlsFYGU/Hu4vQSdTt27xo66VotCYc1/img.png" class="image3" />
+    </div>
+    <div id="back">
+
+    </div>
+    <button id="red">빨강</button>
+    <button id="green">초록</button>
+    <button id="blue">파랑</button>
+    <button id="pink">핑크</button>
+
+    <div id="time">ㅁ</div>
+</body>
+
+</html>

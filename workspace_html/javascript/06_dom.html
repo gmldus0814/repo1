@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM 연습</h1>
+    <div id="view">첫번째 view</div>
+    <div id="view">두번째 view</div>
+
+    <div id="wrap">
+        <div class="div2">안쪽 div2</div>
+        <div class="div3">안쪽 div3</div>
+    </div>
+    <div class="div3 div2">div2</div>
+
+    <script>
+        document.getElementById("title");
+
+
+        // id 속성의 값이 동일한 경우라도 처음 나오는 DOM 하나만 가져옴
+        let view = document.getElementById("view");
+        console.log(view);
+
+        // tag명으로 DOM찾기
+        // 일치하는 모든 걸 배열로 돌려준다.
+        let divs = document.getElementsByTagName("div");
+        console.log(divs);
+
+        let h1s = document.getElementsByTagName("h1");
+        console.log(h1s);
+
+        // tag가 ㅇ없는 경우
+        // 비어있는 배열 (null)아님에 주의)
+        // 배열.length == 0
+        console.log(document.getElementsByTagName("humen"));
+
+        // class로 선택해오는 방법
+        let div2s = document.getElementsByClassName("div2");
+        console.log(div2s);
+
+        let wrap = document.getElementById("wrap");
+        console.log(wrap);
+
+        let child_div2 = wrap.getElementsByClassName("div2");
+        console.log(child_div2);
+
+        // querySelectorAll 해당 요솔ㄹ 배열로 돌려줌
+        let qsa = document.querySelectorAll(".div2");
+        console.log(qsa);
+
+        // 부모 선택
+        let parent = div2.parentNode;
+        console.log(parent);
+
+        let two = document.querySelector("#two");
+
+        two.classList.add('div4');
+
+        two.classList.remove("div5");
+        // toggle없으면 있게, 있으면 없게
+        two.classList.toggle("div5");
+
+        // 속성과 속성 값을 추가
+        // 만약 속성이 원래 있었다면 덮어쓰기
+        two.setAttribute("data-human", "1강의실");
+        two.setAttribute("data-human", "11강의실");
+
+
+    </script>
+</body>
+</html>

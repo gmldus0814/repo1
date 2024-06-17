@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="captain">
+        <span>당선을</span> <span>축하</span>
+    </div>
+    <div id="view">
+        <span>원래 있던 글씨</span>
+    </div>
+    <br>
+
+    id : <input type="text" id="id" value="미리 적은 글"> <br>
+            
+    <input type="radio" name="rad" value="1"  checked="checked">라디오1
+    <input type="radio" name="rad" value="2">라디오2
+    <input type="radio" name="rad" value="3">라디오3
+
+    <script>
+        let cap = document.querySelector("#captain");
+        // textContent : html 소스에 있는 text만 그대로 출력
+        let textContent = cap.textContent;
+        console.log(textContent);
+
+        // innerText : 화면에 보이는대로 브라우저가 계산을 끝내고 실제로 표시한대로
+        let innerText = cap.innerText;
+        console.log(innerText);
+
+        // innerHTML : html소스 내용물 전부 다 출력
+        let innerHTML = cap.innerHTML;
+        console.log(innerHTML);
+
+        cap.textContent = "<h1"
+
+        cap.innerHTML += "<h2>h2</h2>"
+
+        let h3 = document.createElement("h3");
+
+    </script>
+</body>
+
+</html>

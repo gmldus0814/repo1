@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
         //     console.log('minus 실행')
         //     return x - y;
         // }
-        
+
         // function study(cb) {
         //     console.log('1~2시간 정도 공부함')
         //     let remain = cb(10, 2);
@@ -34,32 +35,32 @@
         // setTimeout(function () {
         //     console.log('Fn1 실행');
         // }, 5*1000);
-        
+
 
         // 전달인자가 하나만 있는 경우
         // 파라미터의 주변 괄호를 생략할 수 있다.
         let test = a => {
-            console.log(a,b);
-            return a+b;
+            console.log(a, b);
+            return a + b;
         }
         let test_1 = () => {
 
         }
 
-        let test_2 = (a,b) => {
-            return a+b;
+        let test_2 = (a, b) => {
+            return a + b;
         }
 
         // 함수의 실행 블럭 내용이 return문만 있는 경우
         // 'return' 키워드와 {} 생략할 수 있음.
         // {}가 없는 경우 return 생략은 필수
 
-        let test3 = (a,b) => a+b;
-        let test4 = a => a*3;
+        let test3 = (a, b) => a + b;
+        let test4 = a => a * 3;
 
-        arr = ['a0', 'a1', 'a2',' a3' ,'a4'];
+        arr = ['a0', 'a1', 'a2', ' a3', 'a4'];
 
-        arr.forEach(function(a,b,c,d) {
+        arr.forEach(function (a, b, c, d) {
             console.log(a);
             console.log(b);
             console.log(c);
@@ -67,21 +68,38 @@
         });
 
 
-        result = arr.map(function(a,b,c,d) {
-            
-            console.log(a);
-            console.log(b);
-            console.log(c);
-            console.log(d);
+        // forEach처럼 동작하는데
+        // return을 통해서 새로운 배열 생성
+        result = arr.map(function (a, b, c, d) {
 
-            return a+"!";
+            console.log(a);
+            console.log(b); //두번째 : 인덱스
+            console.log(c); //원본배열
+            console.log(d);
+            return a + "!";
         });
 
+
+        let interval = 3 * 1000;
+        let diff = -1;
+
+
+        // 조건 true가 좋은 방법은 아니라거 ㅇ.ㅇ..?
+        // while이 끝날때 까지 다음줄이 실행되지 않는다.(동기)
+        // setTimeout은 실행되고 다음줄이 실행된다(비동기)
+        while(diff < interval) {
+            now = new Date().getTime();
+            diff = now - before;
+            console.log('diff', diff);
+        }
+        doit();
 
 
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

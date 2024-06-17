@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만원피자가게</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #dc3545;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        .container div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select,
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>만원피자가게</h2>
+        <div>
+            <label>피자 종류</label>
+            <select id="pizza">
+                <option class="potato">감자</option>
+                <option class="sweet">고구마</option>
+                <option class="pine">하와이안</option>
+            </select>
+        </div>
+        <div>
+            <label>사이즈 선택</label>
+            <label id="size">
+                <label><input type="radio" name="size" class="size-m" value="M(+5,000원)" checked>M(+5,000원)</label>
+                <label><input type="radio" name="size" class="size-l" value="L(+7,000원)">L(+7,000원)</label>
+                <label><input type="radio" name="size" class="size-k" value="K(+10,000원)">K(+10,000원)</label>
+            </label>
+        </div>
+        <div>
+            <label>토핑 선택</label>
+            <label><input type="checkbox" name="topping" class="tp-bp" value="소고기(+3,000원)">소고기(+3,000원)</label>
+            <label><input type="checkbox" name="topping" class="tp-ch" value="치즈(+2,000원)">치즈(+2,000원)</label>
+            <label><input type="checkbox" name="topping" class="tp-ol" value="올리브(+1,000원)">올리브(+1,000원)</label>
+        </div>
+        <div>
+            <label>요청사항</label>
+            <input type="text" class="input" id="request">
+        </div>
+        <input type="submit" value="주문하기" onclick="order()">
+        <div class="result" id="result"></div>
+    </div>
+
+</body>
+<script>
+    function order() {
+
+        let total_pay = 10000;
+
+        let pizza = document.getElementById("pizza").value;
+        let size = document.querySelector('input[name="size"]:checked').value;
+        let toppings = document.querySelectorAll('input[name="topping"]:checked');
+        let request = document.getElementById("request").value;
+
+        if (size == "M(+5,000원)") {
+            total_pay += 5000;
+        } else if (size == "L(+7,000원)") {
+            total_pay += 7000;
+        } else if (size == "K(+10,000원)") {
+            total_pay += 10000;
+        }
+
+        toppings.forEach(topping => {
+            if (topping.value == "소고기(+3,000원)") {
+                total_pay += 3000;
+            } else if (topping.value == "치즈(+2,000원)") {
+                total_pay += 2000;
+            } else if (topping.value == "올리브(+1,000원)") {
+                total_pay += 1000;
+            }
+        });
+
+
+        let resultDiv = document.getElementById("result");
+
+        // 결과를 HTML로 설정
+        resultDiv.innerHTML = `
+            <p>피자 종류: ${pizza}</p>
+            <p>사이즈 종류: ${size}</p>
+            <p>토핑:</p>
+            <ul>
+                ${Array.from(toppings).map(topping => `<li>${topping.value}</li>`).join('')}
+            </ul>
+            <p>요청사항: ${request}</p>
+            <p>총 금액: ${total_pay}원</p>
+        `;
+
+    }
+</script>
+
+</html>

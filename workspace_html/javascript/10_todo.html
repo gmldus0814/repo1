@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function () {
+
+
+            let add = document.querySelector("#add");
+            add.addEventListener('click', function () {
+                let todo = document.querySelector("#todo");
+                
+                let list = document.querySelector("#list");
+                
+                
+                // innerHtml방식
+                // let html = '<input type="checkbox">' + todo.value + '<input type="button" value="삭제"><br>';
+                // list.innerHTML += html;
+
+                // append방식
+                let div = document.createElement('div');
+
+                let html = '';
+                html += '<input type="checkbox" class="chk">';
+                html += todo.value;
+                html += '<input type="button" class="del" value="삭제"><br>';
+                div.innerHTML = html;
+
+                list.prepend(div);
+
+                let dels = document.querySelectorAll('.del');
+                for(let i=0; i<dels.length; i++) {
+                    // 계속 눌림 - 비효율적
+                    // dels[i].addEventListener('click', function(evnet) {
+                    //     event.target.parentNode.remove();
+                    // })
+
+                    // 클릭한 걸 덮어쓰기 - 비효율적
+                    dels[i].onclick() = function(event) {
+                        console.lof(event.target.parentNode.innerText);
+                    }
+                }
+                
+
+            })
+
+            document.querySelector("#all").addEventListener("click", function() {
+                let isChecked = document.querySelector("#all").checked;
+                let list_chk = document.querySelectorAll('.chk');
+                for(let i=0; i<list_chk.length; i++) {
+                    list_chk[i].checked = isChecked;
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Todo-List</h1>
+        <div>
+            <input type="text" id="todo">
+            <input type="button" id="add" value="추가">
+        </div>
+        <div>
+            <input type="checkbox" id="all">전체선택
+            <input type="button" id="delete" value="선택삭제">
+
+            <div id="list"></div>
+        </div>
+    </div>
+</body>
+
+</html>

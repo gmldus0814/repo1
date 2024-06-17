@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #cursor {
+            width: 50px;
+            height: 50px;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #catTower {
+            border: solid 1px red;
+            height: 2000px;
+        }
+    </style>
+    <script>
+
+        // function btn2click() {
+        //     document.querySelector("#console").innerHTML += '버튼2 클릭<br>';
+        // }
+
+        window.onload = function () {
+            //     let btn1 = document.querySelector("#btn1");
+            //     console.log('btn1:', btn1);
+
+            //     btn1.onclick = function () {
+            //         console.log('버튼1 클릭');
+            //         document.querySelector("#console").innerHTML += '버튼1 클릭<br>';
+            //     }
+            //     // onClick은 click이벤트가 발생했을 때 실행할 함수를 가지고 있는
+            //     // "변수"라서 딱 하나으 ㅣ함수만 지정 가능
+            //     btn1.onclick = function () {
+            //         console.log('버튼1 클릭');
+            //         document.querySelector("#console").innerHTML += '버튼1 클릭<br>';
+            //     }
+
+
+            //     // addEventListener
+            //     // 첫번째 전달 ㅇ니자: 이벤트 종료
+            //     // 두번째 전달인자: 실행할 함수
+            //     let btn3 = document.querySelector("#btn3");
+            //     btn3.addEventListener('click', function () {
+            //         document.querySelector("#console").innerHTML = '버튼3 클릭<br>';
+            //     })
+
+            //     function btn3click() {
+            //         document.querySelector("#console").innerHTML = '버튼3 클릭<br>';
+            //     }
+            //     // 여러번 추가할 수 있음, 모두 동작함
+            //     btn3.addEventListener('click', btn3click);
+
+            //     window.addEventListener('scroll', function () {
+            //         console.log('스크롤 변경');
+            //         console.log(document.documentElement.scrollTop)
+            //     })
+
+
+            //     let id = document.querySelector('#id')
+            //     id.addEventListener('keyup', function () {
+            //         console.log('keyup')
+            //     })
+            let login = document.querySelector('#login');
+            login.addEventListener('click', function () {
+                let id_value = document.querySelector('#id').value;
+                let pw_value = document.querySelector('#pw').value;
+
+                if (id_value == "" && pw_value == "") {
+                    alert("아이디와 비밀번호를 입력하세요");
+                } else if (pw_value == "") {
+                    alert("비밀번호를 입력하세요");
+                } else if (id_value == "") {
+                    alert("아이디를 입력하세요.");
+                }
+                if (id_value == "admin" && pw_value == "1234") {
+                    alert("로그인 되었습니다");
+                    document.querySelector('#id').value = "";
+                    document.querySelector('#pw').value = "";
+                }
+
+            });
+
+            /* 버튼3에
+            마우스가 들어갔을때(hover)
+            font-size를 20px로
+            마우스가 나갔을 때
+            14px로 변경
+            */
+            //    id가 btn3인 dom(html 태그)를 가져와서 변수에 담기
+            let newBtn3 = document.querySelector("#btn3");
+            newBtn3.addEventListener('mousehover', function () {
+                console.log('마우스 들어옴')
+                newBtn3
+            })
+            newBtn3.addEventListener('mouseout', function () {
+                console.log('마우스 나감')
+            })
+            // 앞에 아무것도 안쓰면 브라우저 전체에 적용되는 이벤트
+            addEventListener('mousemove', function (evt) {
+                console.log(evt)
+            })
+
+            let catTower = document.querySelector('catTower');
+            catTower.addEventListener('mosemove', function (evt) {
+                // console.log('마우스 움직임')
+                // 화면에 보이는 영역 기준 x,y
+                // 스크롤이 내려왔더라도 그냥 지금 보이는 왼쪽 위 기준
+                // console.log(evt.x, evt.clientX)
+            })
+
+            let cursor = document.querySelector("#cursor");
+            cursor.style.left = evt.pageX + 'px';
+            cursor.style.top = evt.pageY + 'px';
+            cursor.style.display = "block";
+
+            // 이벤트명 : focus, blur
+            // #id에 적용해서
+            // focus : "아이디에 포커스 맞춰짐"
+            // blur : "아이디에 포커스 잃음"
+            let newId = document.querySelector("#id");
+            newId.addEventListener("focus", function() {
+                console.log("아이디에 포커스 맞춰짐")
+            })
+            newId.addEventListener("blur", function() {
+                console.log("아이디에 포커스 잃음")
+            })
+
+            document.querySelector("#parent").addEventListener("click", function(event) {
+
+                // event.target :  이벤트가 발생된 DOM
+                console.log('event.target :', event.target);
+                // event.curremtTarget:  이벤트가 적용된 DOM
+                console.log('event.currentTarget :', event.currentTarget);
+                // this === event.currentTarget
+                // 더이상 window가 아님
+                console.log('this :', this);
+            }, true)
+
+            document.querySelector("#form").addEventListener("submit", function(event) {
+                // 원래 html고유 기능을 없애줌
+                event.preventDefault();
+
+                let value = document.querySelector("#keyword").value;
+                
+            })
+
+        }
+
+    </script>
+</head>
+
+<body style="height: 2000px;">
+    <!-- 그 외에는 "아이디 또는 비밀번호를 확인하세요" 출력
+    id,pw가 아무것도 안 적힌 경우 "..는 필수입니다" 출력 -->
+    <button type="button" id="btn1">버튼1</button>
+    <button type="button" id="btn2" onclick="btn2click()">버튼2</button>
+    <button type="button" id="btn3">버튼3</button>
+    <div>
+        아이디 : <input type="text" id="id"><br>
+        비밀번호 : <input type="password" id="pw"><br>
+        <input type="button" id="login" value="로그인">
+    </div>
+    <div id="console"></div>
+
+    <img id="cursor"
+        src="https://mblogthumb-phinf.pstatic.net/MjAyMjAxMjVfMjAy/MDAxNjQzMTAyOTk2NjE0.gw_H_jjBM64svaftcnheR6-mHHlmGOyrr6htAuxPETsg.8JJSQNEA5HX2WmrshjZ-VjmJWqhmgE40Qm5csIud9VUg.JPEG.minziminzi128/IMG_7374.JPG?type=w800">
+    <div id="catTower">
+
+    </div>
+
+    <div id="parent">
+        부모
+    </div>
+
+
+</body>
+
+</html>
