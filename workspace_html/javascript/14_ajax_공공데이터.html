@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            document.querySelector('#btn').addEventListener("click", function () {
+                console.log('hi')
+                forecast();
+            });
+        }
+        function forecast() {
+            let url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"
+            url += "?";
+            url += "serviceKey=0IkoW3YeYC8LttGL%2F%2FaPmi7ykE8tMPlT9DVCMmBLuy03IBT0bYb0FKYLP8z9pwNt%2BeGf9P9d88z%2BMB2Gbid0iw%3D%3D";
+            url += "&"
+            url += "numOfRows=1000"
+            url += "&"
+            url += "pageNo=1"
+            url += "&"
+            url += "dataType=JSON"
+            url += "&"
+            url += "base_date=20240618"
+            url += "&"
+            url += "base_time=0630"
+            url += "&"
+            url += "nx=63"
+            url += "&"
+            url += "ny=110"
+
+
+
+
+            console.log('hi')
+            let xhr = new XMLHttpRequest();
+            xhr.open("get", url);
+            xhr.send();
+            xhr.onload = function () {
+                let data = xhr.responseText;
+
+                let json = JSON.parse(data)
+                console.log(json);
+
+                let info_view = document.querySelector("#info_view");
+
+
+
+                let item = json.response.body.items.item;
+                for (let i = 0; i < item.length; i++) {
+                    if (item[i].category == "T1H") {
+                        console.log(item[i])
+
+                        let html = `
+                                    <tr>
+                                        <td>${item[i].category}</td>
+                                        <td>${item[i].fcstDate}</td>
+                                        <td>${item[i].fcstTime}</td>
+                                        <td>${item[i].fcstValue}</td>
+                                    </tr>`;
+                        info_view.innerHTML += html;
+                    }
+
+                    else if (item[i].category == "REH") {
+                        console.log(item[i])
+
+                        let html = `
+                                    <tr>
+                                        <td>${item[i].category}</td>
+                                        <td>${item[i].fcstDate}</td>
+                                        <td>${item[i].fcstTime}</td>
+                                        <td>${item[i].fcstValue}</td>
+                                    </tr>`;
+                        info_view.innerHTML += html;
+                    }
+                }
+
+                let filtered = item.filter(function (info) {
+                    return info.category == "RN1" || info.category == "REH"
+                });
+
+                console.log(filtered);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" id="btn">초단기예보조회</button>
+    <table>
+        <tbody id="info_view">
+        </tbody>
+    </table>
+</body>
+
+</html>

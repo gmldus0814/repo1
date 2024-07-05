@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"> </script>
+    <script>
+        window.addEventListener("load", function () {
+
+            document.querySelector("#btn").addEventListener('click', function () {
+                doAjax();
+            })
+
+            document.querySelector("#btn2").addEventListener('click', function () {
+                doAjaxDaum();
+            })
+
+            $("#btn3").off("click").on("click",function() {
+                let option = {
+                    "url" : "https://jsonplaceholder.typicode.com/users",
+                    "type" : "get",
+                    "success" : function() {
+                        // 다녀오는 걸 성공했을 때 실행되는 함수
+                        console.log(data);
+                    }
+
+                };
+                
+                $.ajax ();
+            })
+
+        })
+
+        function doAjax() {
+            // ajax 객체 생성
+            let xhr = new XMLDocument();
+
+            // 보낼 준비
+            xhr.open('get', 'https://jsonplaceholder.typicode.com/users');
+
+            // 보내기
+            xhr.send();
+
+            // 다녀온 후
+            xhr.onload = function () {
+                console.log("다녀왔습니다");
+
+                // 받아온 내용이 저장되는 변수
+                let text = xhr.respontText;
+                conlse.log(text);
+
+                // 글씨를 json 객체로 변경
+                let data = JSON.parse(text);
+                conlse.log(data);
+            }
+
+
+        }
+
+        function doAjaxDaum() {
+
+            // ajax 객체 생성
+            let xhr = new XMLDocument();
+
+            // 보낼 준비
+            xhr.open('get', 'https://www.op.gg/');
+
+            // 보내기
+            xhr.send();
+
+            // 다녀온 후
+            xhr.onload = function () {
+                console.log("다녀왔습니다");
+
+                // 받아온 내용이 저장되는 변수
+                let text = xhr.respontText;
+                conlse.log(text);
+
+                // 글씨를 json 객체로 변경
+                let data = JSON.parse(text);
+                conlse.log(data);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" id="btn">ajax 실행</button>
+    <button type="button" id="btn2">op.gg</button>
+    <button type="button" id="btn3">jQuery ajax 방법 1</button>
+    <button type="button" id="btn4">jQuery ajax 방법 2</button>
+</body>
+
+</html>

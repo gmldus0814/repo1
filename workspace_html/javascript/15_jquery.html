@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"> </script>
+    <script>
+        $(function() {
+            // 페이지 로딩이 끝나면 실행 window.onload와 동일
+            init();
+            bind();
+        });
+
+        function init() {
+            // $()함수에 전달인자로 글씨를 주게되면 css 선택자로 인식합니다.
+            // 그 글씨가 만약 tag라면 createElement 해줌
+            let list_h1 = $("h1");
+            console.log(list_h1);
+
+            // querySelectorAll로 가져온 배열을 반복하면서 싹다변경을 실행한거랑 동일
+            $("h1").text("응가💩");
+
+            $("#parent").append("<div>자식2</div>");
+            $("#parent").prepend("<div>자식2</div>");
+            $("#parent").append($("h1")[0]);
+
+            // #("parent")[0].innerHTML = "";
+            // #("parent")[0].html("");
+            $("#parent").empty();
+
+            $("#parent").remove();
+
+            $("#chk").addClass("c1");
+            $("#chk").addClass("c2");
+            $("#chk").addClass("c3");
+            $("#chk").removeClass("c2");
+            $("#chk").toggleClass("c2");
+
+            // 이게 toggle
+            // if($("#chk").hasClass("#c1")) {
+            //     console.log('c1 있음')
+            //     $("#chk").removeClass("c1");
+            // } else {
+            //     $("#chk").addClass("c1");
+            // }
+
+            // 속성 조작
+            // arrt
+            // 전달인자 하나인 경우:getAttribute
+            // 전달인자 두개인 경우 : setAttribute
+            $("#chk").attr('data-human2','값2');
+            $("#chk").removeAttr("data-human");
+
+            console.log($("#chk").prop("checked")); //체크상태에 따라 true or false 반환
+            $("#input").val("💩");
+
+            $("#input").css("border", "1px solid red");
+        }
+
+        function bind() {
+            $(".btn").on("click", function(evt) {
+                console.log(evt.target);
+            })
+            $(".btn").off("click").on("click", function(evt) {
+                console.log(this);
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>첫번째</h1>
+    <h1>두번째</h1>
+    <h1>세번째</h1>
+    <div id="parent">
+        부모
+        <div>자식</div>
+    </div>
+
+    <input type="checkbox" id="chk" value="val1" data-human="값">
+    <br>
+    <input type="text" id="input" value="서수찬응가쌈">
+    <br>
+    <input type="button" class="btn" value="버튼일">
+    <input type="button" class="btn" value="버튼이">
+</body>
+</html>
