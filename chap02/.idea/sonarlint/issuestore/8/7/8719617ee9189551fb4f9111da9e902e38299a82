@@ -1,0 +1,37 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(—’ñØüÿÿÿÿ8İìúÜı1
+o
+java:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(Çµí‘8İíúÜı1
+L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ßíúÜı1
+L	java:S106"+Replace this use of System.out by a logger.(Ë¡ÿÿÿÿÿ8ßíúÜı1
+L	java:S106"+Replace this use of System.out by a logger.(Íıü¢ıÿÿÿÿ8ßíúÜı1
+L	java:S106%"+Replace this use of System.out by a logger.(ÚŒù²ùÿÿÿÿ8àíúÜı1
+L	java:S106'"+Replace this use of System.out by a logger.(ÒƒçÑûÿÿÿÿ8àíúÜı1
+L	java:S106+"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8àíúÜı1
+L	java:S106."+Replace this use of System.out by a logger.(¹À¯ÿÿÿÿÿ8àíúÜı1
+L	java:S1064"+Replace this use of System.out by a logger.(‰ïÈúÿÿÿÿ8ãíúÜı1
+G	java:S106:"+Replace this use of System.out by a logger.(ı»ò8äíúÜı1
+L	java:S106="+Replace this use of System.out by a logger.(Ÿ®óàüÿÿÿÿ8äíúÜı1
+G	java:S106>"+Replace this use of System.out by a logger.(°ÜÅ®8éíúÜı1
+L	java:S106D"+Replace this use of System.out by a logger.(ÒƒçÑûÿÿÿÿ8øíúÜı1
+L	java:S106K"+Replace this use of System.out by a logger.(Ùëòùÿÿÿÿ8ùíúÜı1
+L	java:S106["+Replace this use of System.out by a logger.(ï©ıµüÿÿÿÿ8üíúÜı1
+L	java:S106^"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ıíúÜı1
+G	java:S106i"+Replace this use of System.out by a logger.( ±ü8ÿíúÜı1
+M	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8‡îúÜı1
+^	java:S125‘"<This block of commented-out lines of code should be removed.(Ä¼öæÿÿÿÿÿ8‡îúÜı1
+M	java:S106›"+Replace this use of System.out by a logger.(¢‰ñúÿÿÿÿ8‰îúÜı1
+M	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8‰îúÜı1
+H	java:S106£"+Replace this use of System.out by a logger.(¥‚‡™8‰îúÜı1
+M	java:S106¦"+Replace this use of System.out by a logger.(ğÅşÒşÿÿÿÿ8‰îúÜı1
+M	java:S106ª"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ŠîúÜı1
+M	java:S106°"+Replace this use of System.out by a logger.(Å§ø¼ıÿÿÿÿ8ÈÄûÜı1
+H	java:S106³"+Replace this use of System.out by a logger.(ñ¿Õº8ËÈüÜı1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ŠîúÜı1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8ŠîúÜı1
+ä
+java:S6541
+"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 104 to 64, Complexity from 19 to 14, Nesting Level from 5 to 2, Number of Variables from 30 to 6.(Çµí‘8ŠîúÜı1

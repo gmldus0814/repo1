@@ -1,0 +1,59 @@
+
+v
+java:S1192"TDefine a constant instead of duplicating this literal "â–  0. ì´ì „ìœ¼ë¡œ" 3 times.(”°ªºúÿÿÿÿ8Æûòû€2
+z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8°Ùû€2
+z	java:S135Q"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8Çûòû€2
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÀÄûÿÿÿÿ8•âëû€2
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥š™ûÿÿÿÿ8Çûòû€2
+r	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²•Ïêÿÿÿÿÿ8Çûòû€2
+r	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Àõ’øÿÿÿÿ8Èûòû€2
+m	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş»8Äçæû€2
+r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Êòäÿÿÿÿÿ8Åçæû€2
+m	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûıìõ8Åçæû€2
+m	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØŠÉí8°Ùû€2
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(İÉè§ùÿÿÿÿ8Ÿ°Ùû€2
+e
+java:S3824"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(¸çºµ8ñ°Ùû€2
+o	java:S100	"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïá¶Šşÿÿÿÿ8ó°Ùû€2
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(¹÷ä8›ıòû€2
+8
+java:S3626!"Remove this redundant jump.(ÉŠ©ƒ8›ıòû€2
+8
+java:S3626+"Remove this redundant jump.(ÉŠ©ƒ8œıòû€2
+8
+java:S36265"Remove this redundant jump.(ÉŠ©ƒ8œıòû€2
+L	java:S106"+Replace this use of System.out by a logger.(€—”úÿÿÿÿ8ı°Ùû€2
+G	java:S106"+Replace this use of System.out by a logger.(™©¬Ï8ı°Ùû€2
+H
+java:S1168"&Return an empty array instead of null.(¬¬¢‚şÿÿÿÿ8ıòû€2
+L	java:S106"+Replace this use of System.out by a logger.(”°ªºúÿÿÿÿ8ş°Ùû€2
+L	java:S106"+Replace this use of System.out by a logger.(‚õå¢ıÿÿÿÿ8ş°Ùû€2
+L	java:S106'"+Replace this use of System.out by a logger.(”°ªºúÿÿÿÿ8ş°Ùû€2
+G	java:S106("+Replace this use of System.out by a logger.(ìä—š8ş°Ùû€2
+L	java:S1061"+Replace this use of System.out by a logger.(”°ªºúÿÿÿÿ8ş°Ùû€2
+L	java:S1062"+Replace this use of System.out by a logger.(ÏÄèæùÿÿÿÿ8ş°Ùû€2
+L	java:S106<"+Replace this use of System.out by a logger.(Ùİ–±úÿÿÿÿ8ÿ°Ùû€2
+G	java:S106?"+Replace this use of System.out by a logger.(èíü§8€±Ùû€2
+o
+java:S3776E"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(Çµí‘8ø°Ùû€2
+O
+java:S1481S"2Remove this unused "americano_num" local variable.(ş»8œéæû€2
+P
+java:S1481U".Remove this unused "latte_num" local variable.(½Êòäÿÿÿÿÿ8œéæû€2
+P
+java:S1481W"3Remove this unused "cappuccino_num" local variable.(Ûıìõ8éæû€2
+L	java:S106["+Replace this use of System.out by a logger.(ö—íıÿÿÿÿ8±Ùû€2
+G	java:S106j"+Replace this use of System.out by a logger.(İ–ïÑ8±Ùû€2
+L	java:S106l"+Replace this use of System.out by a logger.(÷­¨£øÿÿÿÿ8£ıòû€2
+L	java:S106p"+Replace this use of System.out by a logger.(ò§ĞÔüÿÿÿÿ8£ıòû€2
+L	java:S106q"+Replace this use of System.out by a logger.(¡¡»Üıÿÿÿÿ8¤ıòû€2
+G	java:S106t"+Replace this use of System.out by a logger.(œç‹¯8¤ıòû€2
+G	java:S106u"+Replace this use of System.out by a logger.(Ï’Ö8¤ıòû€2
+G	java:S106v"+Replace this use of System.out by a logger.(ô‘Äî8¤ıòû€2
+M	java:S106‚"+Replace this use of System.out by a logger.(Ú÷Ëîûÿÿÿÿ8¥ıòû€2
+M	java:S106’"+Replace this use of System.out by a logger.(ÊŞ£Áúÿÿÿÿ8¥ıòû€2
+H	java:S106¢"+Replace this use of System.out by a logger.(¼†êú8¦ıòû€2
+H	java:S106®"+Replace this use of System.out by a logger.(èíü§8ÁÕ—ü€2
+ã
+java:S6541E"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 87 to 64, Complexity from 21 to 14, Nesting Level from 3 to 2, Number of Variables from 18 to 6.(Çµí‘8‚±Ùû€2
